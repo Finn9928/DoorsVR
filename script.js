@@ -1,6 +1,6 @@
 /*******************************************************/
-// Game Name: Door VR
-const VERSION_NUM = '0.1.0'
+// Game Name: halls VR
+const VERSION_NUM = '0.2.0'
 // Written by Cliff Harfield
 /*******************************************************/
 

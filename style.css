@@ -13,28 +13,55 @@ div {
 	margin-top: 5.5vh;
 	height: 80%;
 	width: 60.6%;
-	border: 5px solid #ff0000;
 }
 .bigButtons {
 	margin: 5%;
-	margin-bottom: 2.5;
-	height: 120px;
+	margin-bottom: 2%;
+	height: 160px;
 	width: 88%;
 	color: #90861a;
 	text-align: center;
 	font-size: 6vw;
 	border: 4px solid #90861a;
-	border-radius: 7px;
+	border-radius: 8px;
+	background-color: #4b2a19ff;
+}
+.bigButtons:hover{
+	animation-name: buttonHover;
+	animation-duration: .5s;
+	background-color: #361807ff;
+}
+.bigButtons:not(:hover){
+	animation-name: notButtonHover;
+	animation-duration: .2s;
 	background-color: #4b2a19ff;
 }
 .smallButton {
 	margin: 5%;
-	height: 20%;
+	height: 80px;
 	width: 40%;
 	color: #90861a;
 	text-align: center;
 	font-size: 4vw;
 	border: 4px solid #90861a;
-	border-radius: 7px;
+	border-radius: 8px;
 	background-color: #4b2a19ff;
+}
+.smallButton:hover{
+	animation-name: buttonHover;
+	animation-duration: .5s;
+	background-color: #361807ff;
+}
+.smallButton:not(:hover){
+	animation-name: notButtonHover;
+	animation-duration: .2s;
+	background-color: #4b2a19ff;
+}
+@keyframes buttonHover {
+	from {background-color: #4b2a19ff;}
+	to {background-color: #361807ff;}
+}
+@keyframes notButtonHover {
+	from {background-color: #361807ff;}
+	to {background-color: #4b2a19ff;}
 }
