@@ -1,24 +1,58 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Doors VR</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="script.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Doors VR</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="script.js"></script>
 </head>
 
 <body>
-  <div>
-    <
-  </div>
-  <div>
-    <button class = "bigButtons">Play</button>
-    <button class = "bigButtons">How To Play</button>
-    <button class = "smallButton">Credits</button>
-  </div>
+	<div class="logoDiv">
+		<img src="Texures/HallsVrLogo.png" class="logo"></img>
+	</div>
+	<div class="buttonDiv">
+		<button class="bigButtons" onclick="document.getElementById('id01').style.display='block'">Play</button>
+		<div id="id01" class="modal-overwrite w3-modal">
+			<div class="w3-modal-content modalChanges">
+				<div class="w3-container playButtonWarning">
+					<span onclick="document.getElementById('id01').style.display='none'"
+						class="w3-display-topright closeButton"></span>
+					<h3 class="warning-title">WARNING</h3>
+					<p class="warning-paragraph">This Experience is a horror game and his elements of jumpscares, blood and gore.</p>
+				</div>
+			</div>
+		</div>
+		<button class="bigButtons" onclick="document.getElementById('id02').style.display='block'">How To Play</button>
+		<div id="id02" class="modal-overwrite w3-modal">
+			<div class="w3-modal-content modalChanges">
+				<div class="w3-container playButtonWarning">
+					<span onclick="document.getElementById('id02').style.display='none'"
+						class="w3-display-topright closeButton"></span>
+					<h3 class="htp-title">How to play</h3>
+					<img class="htp-image" src="Texures/HowToPlayScreen.png">
+				</div>
+			</div>
+		</div>
+		<button class="smallButton" onclick="document.getElementById('id03').style.display='block'">Credits</button>
+		<div id="id03" class="modal-overwrite w3-modal">
+			<div class="w3-modal-content modalChanges">
+				<div class="w3-container playButtonWarning">
+					<span onclick="document.getElementById('id03').style.display='none'"
+						class="w3-display-topright closeButton"></span>
+					<h3 class="credits-title">Credits</h3>
+					<p class="credits-paragraph">Hallway Image on the home page made by: thefontbandit on Pixabay<br>Leather Image made by: ppt-backgrounds.net<br>Design by: Cliff Harfield
+</p>
+				</div>
+			</div>
+		
+	</div>
 </body>
 
 </html>
