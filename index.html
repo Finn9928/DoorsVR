@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Doors VR</title>
+	<title>Halls VR</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,18 +19,19 @@
 	</div>
 	<div class="buttonDiv">
 		<button class="bigButtons" onclick="document.getElementById('id01').style.display='block'">Play</button>
-		<div id="id01" class="modal-overwrite w3-modal">
+		<div id="id01" class="modal-overwrite w3-modal w3-animate-zoom">
 			<div class="w3-modal-content modalChanges">
 				<div class="w3-container playButtonWarning">
 					<span onclick="document.getElementById('id01').style.display='none'"
 						class="w3-display-topright closeButton"></span>
 					<h3 class="warning-title">WARNING</h3>
 					<p class="warning-paragraph">This Experience is a horror game and his elements of jumpscares, blood and gore.</p>
+					<button onclick="document.location='VR-world/VRworld.html'" class="playButton">Play</button>
 				</div>
 			</div>
 		</div>
 		<button class="bigButtons" onclick="document.getElementById('id02').style.display='block'">How To Play</button>
-		<div id="id02" class="modal-overwrite w3-modal">
+		<div id="id02" class="modal-overwrite w3-modal w3-animate-zoom">
 			<div class="w3-modal-content modalChanges">
 				<div class="w3-container playButtonWarning">
 					<span onclick="document.getElementById('id02').style.display='none'"
@@ -41,7 +42,7 @@
 			</div>
 		</div>
 		<button class="smallButton" onclick="document.getElementById('id03').style.display='block'">Credits</button>
-		<div id="id03" class="modal-overwrite w3-modal">
+		<div id="id03" class="modal-overwrite w3-modal w3-animate-zoom">
 			<div class="w3-modal-content modalChanges">
 				<div class="w3-container playButtonWarning">
 					<span onclick="document.getElementById('id03').style.display='none'"

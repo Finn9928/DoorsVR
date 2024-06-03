@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Halls VR</title>
+      <link href="VR-world/VRworld.css" rel="stylesheet" type="text/css" />
+        <!--Installing A-Frame-->
+        <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+            <!--Script needed to create the navmesh in the inspector-->  
+            <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+        <!-- A-frame extras-->
+            <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+            <script src="https://rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+        <a-scene physics="gravity: -9.8; restitution: 0.1" inspector-plugin-recast>
+            <a-entity shadow='receive:true cast:true' id="rig" position="0 0 0" movement-controls="constrainToNavMesh: true;speed:0.5;" >
+                <a-entity camera id="camera" position="0 1.6 0" look-controls extended-wasd-controls></a-entity>
+            </a-entity>
+            <a-box position="0 1 -5" color="red"></a-box>
+        </a-scene>
+    </body>
+</html>

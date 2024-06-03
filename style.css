@@ -135,4 +135,18 @@ body {
 }
 .modal-overwrite {
 	padding-top: 0;
+	background-color: #FF000000;
+}
+.playButton {
+	font-family: "Metal Mania";
+	margin: 0%;
+	margin-bottom: 0%;
+	height: 50%px;
+	width: 40%;
+	color: #90861a;
+	text-align: center;
+	font-size: 6vw;
+	border: 4px solid #90861a;
+	border-radius: 8px;
+	background-color: #4b2a19ff;
 }
