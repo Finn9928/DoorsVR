@@ -12,10 +12,10 @@ body {
 	background-repeat: no-repeat;
 }
 .buttonDiv {
-	/*margin-left: 36%;*/
 	margin-top: 5.5vh;
+	margin-right: 1%;
 	height: 80%;
-	width: 60.6%;
+	width: 63%;
 	float: right;
 }
 .bigButtons {

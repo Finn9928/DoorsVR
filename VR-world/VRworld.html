@@ -4,21 +4,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width">
       <title>Halls VR</title>
-      <link href="VR-world/VRworld.css" rel="stylesheet" type="text/css" />
+      <link href="VRworld.css" rel="stylesheet" type="text/css" />
         <!--Installing A-Frame-->
         <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-            <!--Script needed to create the navmesh in the inspector-->  
-            <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+        <!--Script needed to create the navmesh in the inspector-->  
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
         <!-- A-frame extras-->
-            <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-            <script src="https://rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+        <script src="VRworld.js"></script>
     </head>
     <body>
-        <a-scene physics="gravity: -9.8; restitution: 0.1" inspector-plugin-recast>
+        <a-scene cursor='rayOrigin: mouse' physics="gravity: -9.8; restitution: 0.1" inspector-plugin-recast>
             <a-entity shadow='receive:true cast:true' id="rig" position="0 0 0" movement-controls="constrainToNavMesh: true;speed:0.5;" >
-                <a-entity camera id="camera" position="0 1.6 0" look-controls extended-wasd-controls></a-entity>
+                <a-entity camera id="camera" position="0 1.6 3" look-controls extended-wasd-controls="acceleration: 100">
+                    <a-cursor position='0 0 -1'></a-cursor>
+                </a-entity>
             </a-entity>
-            <a-box position="0 1 -5" color="red"></a-box>
+            <!--- main roon --->
+            <a-plane rotation="-90.00021045914971 90 0" position="" scale="10 5.8 1" color="#744401" material="" geometry="" src="images/RugOffAxis.jpg"></a-plane>
+            <a-plane rotation="0 90.00021045914971 -90" position="-2.83093 2 0" scale="4 10 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-plane rotation="0 -90 -90.00021045914971" position="2.84494 2 0" scale="4 10 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-plane rotation="0 180 -90.00021045914971" position="0 2 5.02364" scale="4 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-plane rotation="0 0 -90.00021045914971" position="0 3.7678 -5.008" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-plane rotation="0 0 90" position="3.41888 1.62203 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-plane rotation="0 0 90" position="-3.37289 1.59138 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
+            <a-gltf-model id="HTML_firstDoor"src="Models/static_wood_door.glb" position="0 0 -5" gltf-model="Models/static_wood_door.glb" scale="0.01 0.01 0.01">
+                <a-box id="doorHandle1" visible="false" position="-40.36783 93.47678 6.93422" scale="17.8 26 27" onClick='doorOpen()'></a-box>
+            </a-gltf-model>
+            <!--- end of main room --->
         </a-scene>
     </body>
 </html>
