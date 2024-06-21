@@ -52,6 +52,7 @@ body {
 	border: 4px solid #90861a;
 	border-radius: 8px;
 	background-color: #4b2a19ff;
+	margin-left: 28%;
 }
 .smallButton:hover {
 	animation-name: buttonHover;
@@ -139,8 +140,7 @@ body {
 }
 .playButton {
 	font-family: "Metal Mania";
-	margin: 0%;
-	margin-bottom: 0%;
+	margin: 1%;
 	height: 50%px;
 	width: 40%;
 	color: #90861a;
@@ -149,4 +149,6 @@ body {
 	border: 4px solid #90861a;
 	border-radius: 8px;
 	background-color: #4b2a19ff;
+	margin-left: 30%;
+	margin-bottom: 3%;
 }

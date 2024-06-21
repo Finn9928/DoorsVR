@@ -16,8 +16,9 @@
     </head>
     <body>
         <a-scene cursor='rayOrigin: mouse' physics="gravity: -9.8; restitution: 0.1" inspector-plugin-recast>
-            <a-entity shadow='receive:true cast:true' id="rig" position="0 0 0" movement-controls="constrainToNavMesh: true;speed:0.5;" >
-                <a-entity camera id="camera" position="0 1.6 3" look-controls extended-wasd-controls="acceleration: 100">
+            <a-entity id="rig" position="0 0 0" movement-controls="constrainToNavMesh: true; speed:0.2;" >
+                <a-entity camera id="camera" position="0 1.6 0" look-controls extended-wasd-controls="acceleration: 100">
+                    <a-gltf-model src="Models/game_ready_arm_model.glb" gltf-model="Models/game_ready_arm_model.glb" scale="0.005 0.005 0.005" id="arm" position="0.494 -0.82378 -1.61692" rotation="-180.01 -64.15236544741288 137.66342352049264"></a-gltf-model>
                     <a-cursor position='0 0 -1'></a-cursor>
                 </a-entity>
             </a-entity>
@@ -29,10 +30,39 @@
             <a-plane rotation="0 0 -90.00021045914971" position="0 3.7678 -5.008" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
             <a-plane rotation="0 0 90" position="3.41888 1.62203 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
             <a-plane rotation="0 0 90" position="-3.37289 1.59138 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
-            <a-gltf-model id="HTML_firstDoor"src="Models/static_wood_door.glb" position="0 0 -5" gltf-model="Models/static_wood_door.glb" scale="0.01 0.01 0.01">
+            <a-gltf-model id="HTML_firstDoor"src="Models/static_wood_door.glb" position="0 0 -5" gltf-model="Models/static_wood_door.glb" scale="0.01 0.01 0.01"
+                animation__move = '
+                    property:position;
+                    from:0 0 -5;
+                    to:0.6 0 -5.4;
+                    dur:700;
+                    easing:linear;
+                    startEvents:click;
+                '
+                animation__rotate = '
+                    property:rotation;
+                    from:0 0 0;
+                    to:0 -90 0;
+                    dur:700;
+                    easing:linear;
+                    startEvents:click;
+                '
+                >
                 <a-box id="doorHandle1" visible="false" position="-40.36783 93.47678 6.93422" scale="17.8 26 27" onClick='doorOpen()'></a-box>
             </a-gltf-model>
             <!--- end of main room --->
+            <!--- 2nd room --->
+            <a-plane rotation="-90.00021045914971 -90 0" position="0 0 -13" scale="16 5.8 1" color="#744401" material="" geometry="" src="images/RugOffAxis.jpg" id="2ndroomfloor"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 90 0" scale="16 4 1" id="leftwallaroom2" position="-2.87826 2 -13"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 -90 0" scale="16 4 1" id="rightwallaroom2" position="2.91357 2 -13"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="" scale="6 4 1" id="backwallaroom2" position="0.02668 2 -20.95071"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 180 0" scale="6 3.81195 1" id="frountwallaroom2pt1" position="0.02668 3.98331 -5.00579"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 180 0" scale="6 3.81195 1" id="frountwallaroom2pt2" position="-3.48232 1.66288 -5.00185"></a-plane>
+            <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 180 0" scale="6 3.81195 1" id="frountwallaroom2pt3" position="3.50346 1.66288 -5.00185"></a-plane>
+            <a-plane src="images/rooftexure.jpg" id="roof1" material="" geometry="" rotation="90 0 0" scale="6.12 10.49 11.3" position="0 3.764 0"></a-plane>
+            <a-plane src="images/rooftexure.jpg" id="roof2" material="" geometry="" rotation="90 0 0" scale="6.12 16.20345 11.3" position="0 3.65664 -13.05819"></a-plane>
+            <!-- navmesh -->
+            <a-gltf-model visible="false" src="Models/navmesh.gltf" nav-mesh position="0 -0.1 0"></a-gltf-model>
         </a-scene>
     </body>
 </html>
