@@ -1,7 +1,11 @@
 console.log("VRworld.js boot");
-function doorOpen(_doorNum) {
-  console.log("door handle clicked");
-  console.log(HTML_firstDoor);
-  HTML_firstDoor.setAttribute("rotation","0 -90");
-  HTML_firstDoor.setAttribute("position", "0.6 0 -5.5")
+function showDevon() {
+  devonscareonplayer.setAttribute("visible", "true");
+  console.log("jumpscare");
+  sleep(2000).then(() => { devonscareonplayer.setAttribute("visible", "false"); });
 }
+//code from sitepoint.com
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+//end of sitepoint.com code

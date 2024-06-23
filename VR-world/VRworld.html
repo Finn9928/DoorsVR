@@ -18,7 +18,8 @@
         <a-scene cursor='rayOrigin: mouse' physics="gravity: -9.8; restitution: 0.1" inspector-plugin-recast>
             <a-entity id="rig" position="0 0 0" movement-controls="constrainToNavMesh: true; speed:0.2;" >
                 <a-entity camera id="camera" position="0 1.6 0" look-controls extended-wasd-controls="acceleration: 100">
-                    <a-gltf-model src="Models/game_ready_arm_model.glb" gltf-model="Models/game_ready_arm_model.glb" scale="0.005 0.005 0.005" id="arm" position="0.494 -0.82378 -1.61692" rotation="-180.01 -64.15236544741288 137.66342352049264"></a-gltf-model>
+                    <a-gltf-model src="Models/game_ready_arm_model.glb" gltf-model="Models/game_ready_arm_model.glb" scale="0.004 0.004 0.004" id="arm" position="0.62637 -0.51822 -1.47932" rotation="-29.267830090872714 -79.11000164709816 -66.17204167524903"></a-gltf-model>
+                    <a-plane src="images/DevonjumpScare.png" material="" geometry="" id="devonscareonplayer" position="-0.06257 0.00059 -0.54972" visible="false"></a-plane>
                     <a-cursor position='0 0 -1'></a-cursor>
                 </a-entity>
             </a-entity>
@@ -30,7 +31,7 @@
             <a-plane rotation="0 0 -90.00021045914971" position="0 3.7678 -5.008" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
             <a-plane rotation="0 0 90" position="3.41888 1.62203 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
             <a-plane rotation="0 0 90" position="-3.37289 1.59138 -5.007" scale="3.41 5.80088 1" material="" geometry="" src="images/Wallpapermint.jpg"></a-plane>
-            <a-gltf-model id="HTML_firstDoor"src="Models/static_wood_door.glb" position="0 0 -5" gltf-model="Models/static_wood_door.glb" scale="0.01 0.01 0.01"
+            <a-gltf-model id="HTML_firstDoor"src="Models/static_wood_door.glb" position="0 0 -5" gltf-model="Models/static_wood_door.glb" scale="0.01 0.01 0.01" onClick="setTimeout(showDevon, 3000)"
                 animation__move = '
                     property:position;
                     from:0 0 -5;
@@ -47,9 +48,7 @@
                     easing:linear;
                     startEvents:click;
                 '
-                >
-                <a-box id="doorHandle1" visible="false" position="-40.36783 93.47678 6.93422" scale="17.8 26 27" onClick='doorOpen()'></a-box>
-            </a-gltf-model>
+                ></a-gltf-model>
             <!--- end of main room --->
             <!--- 2nd room --->
             <a-plane rotation="-90.00021045914971 -90 0" position="0 0 -13" scale="16 5.8 1" color="#744401" material="" geometry="" src="images/RugOffAxis.jpg" id="2ndroomfloor"></a-plane>
@@ -61,6 +60,10 @@
             <a-plane src="images/BeigeWall.jpg" material="" geometry="" rotation="0 180 0" scale="6 3.81195 1" id="frountwallaroom2pt3" position="3.50346 1.66288 -5.00185"></a-plane>
             <a-plane src="images/rooftexure.jpg" id="roof1" material="" geometry="" rotation="90 0 0" scale="6.12 10.49 11.3" position="0 3.764 0"></a-plane>
             <a-plane src="images/rooftexure.jpg" id="roof2" material="" geometry="" rotation="90 0 0" scale="6.12 16.20345 11.3" position="0 3.65664 -13.05819"></a-plane>
+            <a-gltf-model src="Models/victorian_chair.glb" id="dining chair" gltf-model="Models/victorian_chair.glb" position="-2.09684 0 -11.122" rotation="0 82.31953 0"></a-gltf-model>
+            <a-gltf-model src="Models/victorian_console_table.glb" id="littletable" position="-1.92088 0.05316 -10.42953" rotation="0 7.820300945740606 -0.19996227050065732" gltf-model="Models/victorian_console_table.glb" scale="15 15 15"></a-gltf-model>
+            <a-light id="Directionalight" type="spot" position="1.36063 2.17354 -8.88404" color="white" light="castShadow: true; decay: 2.75; intensity: 1.24" rotation="0 29.667 0"></a-light>
+            <a-light id='amb' type='ambient' intensity='.8' ></a-light>
             <!-- navmesh -->
             <a-gltf-model visible="false" src="Models/navmesh.gltf" nav-mesh position="0 -0.1 0"></a-gltf-model>
         </a-scene>
